@@ -29,8 +29,10 @@ public final class HelloWorldBot extends Bot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        if (count++ == 100)
+        if (count++ == 100){
             sendTextMessage(update.getMessage(), "Ya ebu sobak Vasya!");
+            count = 0;
+        }
         else
             sendTextMessage(update.getMessage(), "Hello from kabak Vasya!");
     }
