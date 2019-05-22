@@ -5,7 +5,7 @@ import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public final class HelloWorldBot extends Bot {
-    private int count;
+    private static int count;
     
     public static void main(String[] args){
         if(args == null || args.length != 2){
