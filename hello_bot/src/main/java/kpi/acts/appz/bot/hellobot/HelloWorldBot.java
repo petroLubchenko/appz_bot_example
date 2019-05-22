@@ -5,10 +5,13 @@ import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public final class HelloWorldBot extends Bot {
+    private int count;
+    
     public static void main(String[] args){
         if(args == null || args.length != 2){
             System.out.println("You must run bot with 2 args - BotToken and bot UserName");
         } else {
+            count = 0;
             ApiContextInitializer.init();
             Bot.runBot(new HelloWorldBot(args[0], args[1]));
         }
@@ -26,6 +29,9 @@ public final class HelloWorldBot extends Bot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        sendTextMessage(update.getMessage(), "Hello Vasya!");
+        if (count++ = 100)
+            sendTextMessage(update.getMessage(), "Ya ebu sobak Vasya!");
+        else
+            sendTextMessage(update.getMessage(), "Hello from kabak Vasya!");
     }
 }
